@@ -29,6 +29,15 @@ const headers = {
 };
 
 describe('API Automation Activity', function() {
+    before(async, function() {
+        // runs once before the first test in this block
+        console.log('before');
+    });
+
+    this.beforeEach(async, function() {
+        // runs before each test in this block
+        console.log('before each');
+    });
     // context('API GET', function() {
     //     it('success, 200', async function() {
     //         const response = await request(url).get(endpoint).send(body);
@@ -45,7 +54,8 @@ describe('API Automation Activity', function() {
     //         console.log(response.body);
     //     });
     // })
-    context('API POST', function() {
+    context.only('API POST', function() {
+        
         it('success, 201', async function() {
             const response = await request(url).post(endpoint).send(body);
 
