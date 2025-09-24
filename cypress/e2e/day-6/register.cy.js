@@ -123,17 +123,17 @@ describe('Register day 6', async function () {
         .should('not.empty')
         .then(cy.wrap)
         .xpath('//input[@id="datepicker"]')
-        // .type('06/25/2025')
+        .type('06/25/2025')
         .click();
 
-        await cy.visit('https://jqueryui.com/datepicker/');
-        cy.get('.demo-frame')
-        .its('0.contentDocument.body')
-        .should('not.empty')
-        .then(cy.wrap)
-        .xpath('//a[@class="ui-datepicker-prev ui-corner-all"]')
-        // .type('06/25/2025')
-        .click();
+        // await cy.visit('https://jqueryui.com/datepicker/');
+        // cy.get('.demo-frame')
+        // .its('0.contentDocument.body')
+        // .should('not.empty')
+        // .then(cy.wrap)
+        // .xpath('//a[@class="ui-datepicker-prev ui-corner-all"]')
+        // // .type('06/25/2025')
+        // .click();
 
         // await dateField.click();
         // dateField.type('06/25/2025');
