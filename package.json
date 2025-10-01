@@ -2,6 +2,7 @@
   "devDependencies": {
     "chai": "^6.0.1",
     "cypress": "^15.2.0",
+    "cypress-dotenv": "^3.0.1",
     "install": "^0.13.0",
     "mocha": "^11.7.2",
     "supertest": "^7.1.4"
@@ -124,7 +125,9 @@
     "yocto-queue": "^0.1.0"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "test:e2e": "npx cypress run --headless --spec 'cypress/e2e/day-7/*.cy.js'",
+    "test:e2e:chrome": "npx cypress run --headless --browser chrome --spec 'cypress/e2e/day-7/*.cy.js'"
   },
   "repository": {
     "type": "git",

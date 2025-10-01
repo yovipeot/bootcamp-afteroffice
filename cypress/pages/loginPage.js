@@ -19,6 +19,15 @@ class LoginPage {
         cy.url().should("include", "/inventory.html");
         cy.get(".app_logo").should("have.text", "Swag Labs");
     }
+
+    verifyLoginSuccess() {
+        cy.url().should("include", "/inventory.html");
+        cy.get(".app_logo").should("have.text", "Swag Labs");
+    }
+
+    verifyLoginFailed(errorMesg) {
+        cy.get(loginLocators.errorMessage).should("be.visible").and("contain.text", errorMesg);
+    }
 }
 
 export default new LoginPage();

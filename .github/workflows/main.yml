@@ -1,0 +1,35 @@
+name: cypress-bootcamp
+
+on: 
+    push:
+        branches: 
+            - main
+    pull_request:
+        branches:
+            - main
+    workflow_dispatch:
+
+jobs:
+    e2e-tests:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v3
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: '18'
+
+            - name : Clean and Install dependencies
+              run: rm -rf node_modules package-lock.json && npm install
+
+            - name: Fix Cypress permissions
+              run: chmod +x ./node_modules/.bin/cypress
+
+            # - name: Debug CI
+            #     # run: ls -
+
+            - name: Run Cypress tests
+              run: npm run test:e2e:chrome
+              

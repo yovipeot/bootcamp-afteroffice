@@ -1,6 +1,6 @@
 const request = require('supertest');
 const expect = require('chai').expect;
-const bookingData = require('../../cypress/fixtures/bookingData.json');
+const bookingData = require('../../cypress/fixtures/bookingData');
 
 const BASE_URL = 'https://restful-booker.herokuapp.com';
 
