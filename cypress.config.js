@@ -9,7 +9,7 @@ module.exports = defineConfig({
       return config;
     },
     // baseUrl: process.env.BASE_URL || 'https://www.saucedemo.com',
-    baseUrl: process.env.BASE_URL || 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login',
+    baseUrl: process.env.BASE_URL || 'https://opensource-demo.orangehrmlive.com',
     viewportHeight: 1080,
     viewportWidth: 1920,
     

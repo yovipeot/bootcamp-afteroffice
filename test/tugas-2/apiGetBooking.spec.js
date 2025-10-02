@@ -1,6 +1,6 @@
 const request = require('supertest');
 const expect = require('chai').expect;
-const bookingData = require('../../cypress/fixtures/bookingData');
+const bookingData = require('../../cypress/fixtures/bookingData.json');
 
 const BASE_URL = 'https://restful-booker.herokuapp.com';
 
@@ -37,6 +37,7 @@ describe('E2E API Testing - Create & Get Booking', function() {
             expect(response.body).to.have.property(key);
             expect(response.body[key]).to.deep.equal(bookingData[key]);
         });
+
         expect(response.body).to.have.property('firstname');
         console.log('Firstname:', response.body.firstname);
     });

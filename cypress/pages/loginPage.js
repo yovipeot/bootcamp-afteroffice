@@ -1,4 +1,5 @@
 import loginLocators from "../locators/loginLocators";
+require('cypress-xpath');
 
 class LoginPage {
     fillForm(locator, text) {

@@ -1,4 +1,5 @@
 import PIMLocators from "../locators/PIMLocators";
+require('cypress-xpath');
 
 class PIMPage {
     clickItem(locator) {
@@ -14,11 +15,11 @@ class PIMPage {
         cy.get(".oxd-topbar-header-breadcrumb > .oxd-text").should("have.text", "Dashboard");
     }
 
-    login(username, password) {
-        this.fillForm(PIMLocators.usernameInput, username);
-        this.fillForm(PIMLocators.passwordInput, password);
-        this.clickItem(PIMLocators.loginButton);
-    }
+login(username, password) {
+    this.fillForm(PIMLocators.usernameInput, username);
+    this.fillForm(PIMLocators.passwordInput, password);
+    this.clickItem(PIMLocators.loginButton);
+}
 
     addEmployee(firstName, lastName, userName, password, confirmPassword) {
         this.clickItem(PIMLocators.PIMMenu);
